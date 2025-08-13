@@ -1,84 +1,82 @@
+import os
 import socket
 import subprocess
 import time
 from mcrcon import MCRcon
-import queue
-
+import glob
+import platform
+from mcommands import MCommands
+import threading
 
 class ServerManager:
-    def __init__(self, rcon_host, rcon_port, rcon_password, server_bat, update_status_callback=None, status=0, error='None'):
+    def __init__(self, rcon_host, rcon_port, rcon_password, server_bat=None, update_status_callback=None, status=0, error='None'):
         self.rcon_host = rcon_host
         self.rcon_port = rcon_port
         self.rcon_password = rcon_password
         self.server_bat = server_bat
         self.update_status_callback = update_status_callback
-        self.status = status  # 0 - сервер не запущен, 1 - запущен, 2 - запуск, 3 - остановка, 4 - рестарт, 5 - ошибка
+        self.status = status  # 0 - остановлен, 1 - запущен, 2 - запуск, 3 - остановка, 4 - рестарт, 5 - ошибка
         self.error = error
-        # Очередь для потокобезопасной передачи строк лога
-        self.log_queue = queue.Queue()
-        self.max_log_lines = 500  # максимум строк в окне лога
+        self.os_type = platform.system()
 
     def get_local_ip(self):
         return socket.gethostbyname(socket.gethostname())
 
-    def server_running(self, start_check=False, restart_check=False):
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-            sock.settimeout(1)  # 1 секунда ожидания
-            try:
-                result = sock.connect_ex((self.rcon_host, self.rcon_port))
-                if result == 0:  # 0 = порт открыт
+    def server_running(self):
+        ports = [25565, 25575]
+        for port in ports:
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+                sock.settimeout(1)
+                if sock.connect_ex((self.rcon_host, port)) == 0:
                     self.status = 1
-                    start_check = False
-                    restart_check = False
-                else:
-                    if start_check:
-                        self.status = 2
-                    elif restart_check:
-                        self.status = 4
-                    else:
-                        self.status = 0   
-            except socket.error:
-                self.status = 5
-                self.error = "Ошибка подключения к порту"
+                    break
+        else:
+            self.status = 0
         if self.update_status_callback:
             self.update_status_callback()
+
+    def find_server_script(self):
+        if self.os_type == "Windows":
+            path_pattern = os.path.join("C:\\", os.getlogin(), "Minecraft*", "server", "start.bat")
+        else:  # Linux
+            path_pattern = os.path.expanduser("~/.minecraft/Minecraft*/server/start.sh")
+        scripts = glob.glob(path_pattern)
+        return scripts[0] if scripts else None
 
     def start_server(self):
         try:
             self.status = 2
-            process = subprocess.Popen(
-                self.server_bat,
-                shell=True,
-                # creationflags=subprocess.CREATE_NO_WINDOW
-            )
-            
-            while self.status != 1:
+            script = self.server_bat or self.find_server_script()
+            if not script:
+                self.error = "Скрипт запуска сервера не найден"
+                self.status = 5
+                if self.update_status_callback:
+                    self.update_status_callback()
+                return
+            subprocess.Popen([script], shell=True)
+            # Ждем, пока сервер откроет порт
+            for _ in range(30):
                 time.sleep(1)
-                self.server_running(start_check=True)
+                self.server_running()
+                if self.status == 1:
+                    break
+            else:
+                self.error = "Сервер не запустился за 30 секунд"
+                self.status = 5
         except Exception as e:
-            self.error = "Ошибка запуска сервера"
+            self.error = str(e)
             self.status = 5
         if self.update_status_callback:
             self.update_status_callback()
-            
-    
+
+
+
     def stop_server(self):
-        try:
-            self.status = 3
-            # Пытаемся остановить через RCON
-            try:
-                with MCRcon(self.rcon_host, self.rcon_password, port=self.rcon_port) as mcr:
-                    mcr.command("stop")
-                    mcr.disconnect()
-                    time.sleep(5)
-                    self.status = 0
-            except Exception:
-             self.error = "Не удалось остановить через RCON, пробую завершить процесс"
-        except Exception as e:
-            self.error = "Ошибка остановки сервера"
-            self.status = 5
+        self.status = 3
         if self.update_status_callback:
             self.update_status_callback()
+
+
 
     def restart_server(self):
         try:
@@ -86,17 +84,7 @@ class ServerManager:
             self.stop_server()
             self.start_server()
         except Exception as e:
-            self.error = "Ошибка перезапуска сервера"
+            self.error = str(e)
             self.status = 5
         if self.update_status_callback:
             self.update_status_callback()
-            
-    def get_server_time(self):
-        try:
-            with MCRcon(self.rcon_host, self.rcon_password, port=self.rcon_port) as mcr:
-                response = mcr.command("time query daytime")
-                return response
-        except Exception as e:
-            self.error = "Ошибка получения времени сервера"
-            return None
-            
