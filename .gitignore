@@ -1,0 +1,23 @@
+# Виртуальное окружение uv/venv
+.venv/
+
+# Кэш uv
+.uv-cache/
+
+# Python кеши
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# IDE/редакторы
+.vscode/
+.idea/
+*.iml
+
+# Логи
+*.log
