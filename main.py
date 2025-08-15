@@ -8,18 +8,20 @@ import asyncio
 # Server Configuration
 # ===========================
 RCON_HOST = "127.0.0.1"  # RCON server IP address (localhost by default)
-RCON_PORT = 25575        # RCON server port
-RCON_PASSWORD = "777"    # RCON authentication password
+RCON_PORT = 25575  # RCON server port
+RCON_PASSWORD = "777"  # RCON authentication password
 # Path to server start script
 SERVER_BAT = r"C:/Users/talaev/Documents/Minecraft_Spigot_Server/start.bat"
 
 
-async def periodic_update(page: ft.Page,
-                          server_manager: ServerManager,
-                          mcommands: MCommands,
-                          control_panel: ServerControlPanel,
-                          server_state_panel: ServerStatePanel,
-                          server_time_panel: ServerTimePanel):
+async def periodic_update(
+    page: ft.Page,
+    server_manager: ServerManager,
+    mcommands: MCommands,
+    control_panel: ServerControlPanel,
+    server_state_panel: ServerStatePanel,
+    server_time_panel: ServerTimePanel,
+):
     """
     Periodically checks the server status and updates the control panel UI.
 
@@ -34,14 +36,17 @@ async def periodic_update(page: ft.Page,
         - Refreshes the UI every 0.5 seconds.
     """
     while True:
-        server_manager.server_running() 
+        server_manager.server_running()
         server_ip = server_manager.get_local_ip()
+        print(server_manager.status)
         # Обновляем UI панели управления
         control_panel.update_state(server_manager.status)
 
         # Обновляем панель состояния
-        server_state_panel.update_state(server_manager.status, server_manager.error, server_ip)
-        server_time_panel.update_state(server_manager.status, mcommands.get_server_time())
+        server_state_panel.update_state(
+            server_manager.status, server_manager.error, server_ip
+        )
+        server_time_panel.update_state(server_manager.status)
         await asyncio.sleep(0.5)
         page.update()
 
@@ -72,15 +77,13 @@ async def main(page: ft.Page):
     # Initialize server manager
     server_manager = ServerManager(
         RCON_HOST,
-        RCON_PORT,
-        RCON_PASSWORD,
         SERVER_BAT,
-        update_status_callback=ui_status_callback
+        update_status_callback=ui_status_callback,
     )
+
     server_manager.server_running()  # Check initial server status
 
-    mcommands = MCommands(server_manager)
-    
+    mcommands = MCommands(RCON_HOST, RCON_PASSWORD, RCON_PORT)
 
     # Event handlers for control panel buttons
     def on_start_click(e):
@@ -102,9 +105,7 @@ async def main(page: ft.Page):
 
     # Create control panel UI component
     control_panel = ServerControlPanel(
-        on_start=on_start_click,
-        on_stop=on_stop_click,
-        on_restart=on_restart_click
+        on_start=on_start_click, on_stop=on_stop_click, on_restart=on_restart_click
     )
 
     # Create server state panel with initial values
@@ -113,24 +114,24 @@ async def main(page: ft.Page):
     server_time_panel = ServerTimePanel(page, mcommands)
 
     # Add control panel to the page
-    page.add(ft.Row(
-        [
-            control_panel,
-            server_state_panel,
-            server_time_panel
-        ],
-        alignment=ft.MainAxisAlignment.CENTER,
-        spacing=10
-    ))
+    page.add(
+        ft.Row(
+            [control_panel, server_state_panel, server_time_panel],
+            alignment=ft.MainAxisAlignment.CENTER,
+            spacing=10,
+        )
+    )
 
     # Background updater coroutine
     async def updater():
-        await periodic_update(page, 
-              server_manager,
-              mcommands,
-              control_panel,
-              server_state_panel,
-              server_time_panel)
+        await periodic_update(
+            page,
+            server_manager,
+            mcommands,
+            control_panel,
+            server_state_panel,
+            server_time_panel,
+        )
 
     # Schedule background task for server status updates
     page.run_task(updater)

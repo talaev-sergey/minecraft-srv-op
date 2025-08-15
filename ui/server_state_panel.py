@@ -1,4 +1,5 @@
 import flet as ft
+from server_manager import StatusServer
 
 
 class ServerStatePanel(ft.Card):
@@ -22,41 +23,39 @@ class ServerStatePanel(ft.Card):
                     [self.progress_ring, self.state_server],
                     alignment=ft.MainAxisAlignment.START,
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                    spacing=10
+                    spacing=10,
                 ),
-                padding=ft.Padding(
-                    top=8,
-                    bottom=8,
-                    left=20,
-                    right=20
-                )
+                padding=ft.Padding(top=8, bottom=8, left=20, right=20),
             )
-
         )
 
-    def update_state(self, status_server : int, error: str | None, ip: str | None):
-        match status_server:
-            case 0:
+    def update_state(self, status: int, error: str | None, ip: str | None):
+        match status:
+            case StatusServer.OFFLINE:
                 self.progress_ring.value = 0
                 self.progress_ring.visible = False
                 self.state_server.value = "Сервер не запущен"
-            case 1:
+            case StatusServer.ONLINE:
                 self.progress_ring.value = 100
                 self.progress_ring.visible = True
                 self.state_server.value = ip
-            case 2:
+            case StatusServer.STARTING:
                 self.progress_ring.value = None
                 self.progress_ring.visible = True
                 self.state_server.value = "Запуск сервера..."
-            case 3:
+            case StatusServer.STOPING:
                 self.progress_ring.value = None
                 self.progress_ring.visible = True
                 self.state_server.value = "Остановка сервера..."
-            case 4:
+            case StatusServer.RESTATING:
                 self.progress_ring.value = None
                 self.progress_ring.visible = True
                 self.state_server.value = "Перезапуск сервера..."
-            case 5:
+            case StatusServer.ERROR:
+                self.progress_ring.value = 0
+                self.progress_ring.visible = False
+                self.state_server.value = error
+            case StatusServer.RCON_CLOSED:
                 self.progress_ring.value = 0
                 self.progress_ring.visible = False
                 self.state_server.value = error

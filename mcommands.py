@@ -1,19 +1,14 @@
-from datetime import timedelta
 from mcrcon import MCRcon
 
+
 class MCommands:
-    def __init__(self, server_manager: "ServerManager"):
+    def __init__(self, rcon_host, rcon_password, rcon_port):
         """
         Инициализация с ServerManager.
         Подключение к RCON создаётся один раз.
         """
-        self.server_manager = server_manager
         try:
-            self.rcon = MCRcon(
-                host=server_manager.rcon_host,
-                password=server_manager.rcon_password,
-                port=server_manager.rcon_port
-            )
+            self.rcon = MCRcon(host=rcon_host, password=rcon_password, port=rcon_port)
             self.rcon.connect()
         except Exception as e:
             print(f"Ошибка подключения к RCON: {e}")
@@ -51,7 +46,7 @@ class MCommands:
         except Exception as e:
             print(f"Ошибка конвертации времени: {e}")
             return "00:00"
-    
+
     def set_server_time(self, hours, minutes):
         """
         Перевод реального времени (часы, минуты) в тики Minecraft.
