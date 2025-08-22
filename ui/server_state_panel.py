@@ -29,7 +29,7 @@ class ServerStatePanel(ft.Card):
             )
         )
 
-    def update_state(self, status: int, error: str | None, ip: str | None):
+    def update_state(self, status, error: str | None, ip: str | None):
         match status:
             case StatusServer.OFFLINE:
                 self.progress_ring.value = 0

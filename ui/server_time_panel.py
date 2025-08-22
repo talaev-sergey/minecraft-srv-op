@@ -62,7 +62,7 @@ class ServerTimePanel(ft.Card):
         value = "False" if e.control.value == True else "True"
         self.mcommands.do_day_light_cycle(value)
 
-    def update_state(self, status: int):
+    def update_state(self, status):
         if status is StatusServer.ONLINE:
             self.content.visible = True
             self.elevated_time.text = self.mcommands.get_server_time()

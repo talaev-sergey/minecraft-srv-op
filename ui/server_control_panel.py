@@ -58,7 +58,7 @@ class ServerControlPanel(ft.Card):
             )
         )
 
-    def update_state(self, status: int):
+    def update_state(self, status):
         """
         Updates the button states based on the server's running status.
 
