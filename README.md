@@ -1,1 +1,2 @@
-# SrvOp
+# minecraft-server-operator
+

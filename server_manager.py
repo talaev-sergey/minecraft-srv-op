@@ -1,126 +1,137 @@
-import os
 import socket
-import subprocess
-import time
-from enum import Enum
-import glob
+import os
 import platform
-
-
-class StatusServer(Enum):
-    OFFLINE = 0
-    ONLINE = 1
-    STARTING = 2
-    STOPING = 3
-    RESTATING = 4
-    ERROR = 5
-    RCON_CLOSED = 6
+import subprocess
+import threading
+from ui.alert_window import AlertWindow
+from server_status import ServerStatus
+from mcrcon import MCRcon
+import settings as st
+from settings_field import SettingsField
 
 
 class ServerManager:
     def __init__(
         self,
         rcon_host,
-        server_bat=None,
+        rcon_password,
+        rcon_port,
+        alert_window=AlertWindow,
         update_status_callback=None,
-        status=StatusServer.OFFLINE,
-        error="None",
     ):
         self.rcon_host = rcon_host
-        self.server_bat = server_bat
+        self.rcon_password = rcon_password
+        self.rcon_port = rcon_port
+        self.mcrcon = MCRcon(self.rcon_host, self.rcon_password, self.rcon_port)
         self.update_status_callback = update_status_callback
-        self.status = status
-        self.error = error
-        self.os_type = platform.system()
+        self.status = ServerStatus.OFFLINE
+        self.alert_window = alert_window
 
-    def get_local_ip(self):
+    def get_local_ip(self) -> str:
         try:
-            # Создаем временное подключение, чтобы ОС выбрала реальный интерфейс
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            s.connect(("8.8.8.8", 80))  # Подключение не отправляет данных
+            s.connect(("8.8.8.8", 80))
             ip = s.getsockname()[0]
             s.close()
             return ip
-        except Exception:
+        except Exception as e:
+            self.alert_window.set_error(
+                f"получение ip компьютера:{e}. Переключение на локальный local_ip."
+            )
             return "127.0.0.1"
 
-    def server_running(self):
+    def _check_port(self, port: int) -> bool:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+            sock.settimeout(1)
+            return sock.connect_ex((self.rcon_host, port)) == 0
+
+    def _rcon_is_ok(self) -> bool:
+        try:
+            with MCRcon(self.rcon_host, self.rcon_password, self.rcon_port) as mcr:
+                mcr.connect()
+                return True
+        except Exception:
+            return False
+
+    def update_server_status(self):
         ports = [25565, 25575]
 
-        def check_port(port: int) -> bool:
-            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-                sock.settimeout(1)
-                return sock.connect_ex((self.rcon_host, port)) == 0
+        port_65_ok = self._check_port(ports[0])
+        port_75_ok = self._check_port(ports[1])
+        rcon_ok = self._rcon_is_ok()
 
-        port_65 = check_port(ports[0])
-        port_75 = check_port(ports[1])
-
-        if port_65 and port_75:
-            self.status = StatusServer.ONLINE
-        elif not port_65 and port_75:
-            self.status = (
-                StatusServer.STOPING
-                if self.status != StatusServer.RESTATING
-                else self.status
-            )
-
-        elif port_65 and not port_75:
-            self.status = StatusServer.RCON_CLOSED
-            self.error = "RCON соединение закрыто"
+        if port_65_ok and port_75_ok and rcon_ok:
+            self.status = ServerStatus.ONLINE
+        elif port_65_ok and port_75_ok and not rcon_ok:
+            self.status = ServerStatus.STARTING
+        elif not port_65_ok and port_75_ok:
+            if self.status != ServerStatus.RESTATING:
+                self.status = ServerStatus.STOPING
+        elif port_65_ok and not port_75_ok:
+            self.status = ServerStatus.RCON_CLOSED
         else:
-            self.status = StatusServer.OFFLINE
+            self.status = ServerStatus.OFFLINE
 
         if self.update_status_callback:
             self.update_status_callback()
 
-    def find_server_script(self):
-        if self.os_type == "Windows":
-            path_pattern = os.path.join(
-                "C:\\", os.getlogin(), "Minecraft*", "server", "start.bat"
-            )
-        else:  # Linux
-            path_pattern = os.path.expanduser("~/.minecraft/Minecraft*/server/start.sh")
-        scripts = glob.glob(path_pattern)
-        return scripts[0] if scripts else None
+    def get_mcrcon(self):
+        return self.mcrcon
+
+    def get_status(self):
+        return self.status
+
+    def set_status(self, status):
+        self.status = status
 
     def start_server(self):
-        try:
-            self.status = 2
-            script = self.server_bat or self.find_server_script()
-            if not script:
-                self.error = "Скрипт запуска сервера не найден"
-                self.status = 5
-                if self.update_status_callback:
-                    self.update_status_callback()
-                return
-            subprocess.Popen([script], shell=True)
-            # Ждем, пока сервер откроет порт
-            for _ in range(30):
-                time.sleep(1)
-                self.server_running()
-                if self.status == 1:
-                    break
+        app_settings = st.Settings()
+        script = app_settings.get(SettingsField.SERVER_START_SCRIPT.value)
+        if not script:
+            self.alert_window.set_error(
+                "Скрипт для запуска сервера не указан!\nНажмите кнопку   Открыть папку с сервером и найдите файл со скриптом запуска сервера"
+            )
+            return
+        if not os.path.isfile(script):
+            self.alert_window.set_error(f"Скрипт не найден:\n{script}")
+            return
+        system = platform.system()
+
+        def run():
+            if system == "Windows" and script.endswith(".bat"):
+                self.process = subprocess.Popen(
+                    ["cmd.exe", "/c", script], cwd=os.path.dirname(script)
+                )
+            elif system == "Linux" and script.endswith(".sh"):
+                self.process = subprocess.Popen(
+                    ["bash", script], cwd=os.path.dirname(script)
+                )
             else:
-                self.error = "Сервер не запустился за 30 секунд"
-                self.status = 5
-        except Exception as e:
-            self.error = str(e)
-            self.status = 5
+                self.alert_window.set_error(f"Неподдерживаемый скрипт!\n{script}")
+
+        threading.Thread(target=run, daemon=True).start()
+
         if self.update_status_callback:
             self.update_status_callback()
 
     def stop_server(self):
-        self.status = 3
+        try:
+            with self.mcrcon as mcr:
+                responce = mcr.command("stop")
+        except Exception as e:
+            self.alert_window.set_error(f"при выполнении команды '{responce}': {e}")
+        if self.process:
+            try:
+                self.process.wait(timeout=60)  # ждем до 30 секунд
+            except subprocess.TimeoutExpired:
+                self.process.kill()
+                self.process.wait()
+
         if self.update_status_callback:
             self.update_status_callback()
 
     def restart_server(self):
-        try:
-            self.status = 4
-            self.stop_server()
-            self.start_server()
-        except Exception as e:
-            self.error = str(e)
-            self.status = 5
+        self.stop_server()
+        self.start_server()
         if self.update_status_callback:
             self.update_status_callback()

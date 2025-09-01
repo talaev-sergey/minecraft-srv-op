@@ -1,14 +1,18 @@
 [project]
 name = "minecraft-srv-op"
 version = "0.1.0"
-description = "Add your description here"
+description = "A simple GUI application for managing a Minecraft server."
+authors = [{name="Sergey Talaev", email="mail@talaev.ru"}]
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "bump2version>=1.0.1",
     "flet>=0.28.3",
     "mcrcon>=0.7.0",
+    "pip>=25.2",
     "psutil>=7.0.0",
     "pytest>=8.4.1",
     "pytest-cov>=6.2.1",
     "pytest-mock>=3.14.1",
+    "ruff>=0.12.11",
 ]

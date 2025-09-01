@@ -1,12 +1,12 @@
-from datetime import timedelta
 import flet as ft
-from server_manager import StatusServer
+from server_status import ServerStatus
 
 
 class ServerTimePanel(ft.Card):
-    def __init__(self, page: ft.Page, mcommands):
+    def __init__(self, page: ft.Page, mcommands, server_manager):
         self.page = page
         self.mcommands = mcommands
+        self.server_manager = server_manager
 
         self.time_picker = ft.TimePicker(
             on_change=self.handle_change,
@@ -15,7 +15,7 @@ class ServerTimePanel(ft.Card):
         self.page.overlay.append(self.time_picker)
 
         self.elevated_time = ft.ElevatedButton(
-            text="Текущее время",
+            text="00:00",
             icon=ft.Icons.ACCESS_TIME,
             width=100,
             height=40,
@@ -24,7 +24,7 @@ class ServerTimePanel(ft.Card):
 
         self.switch = ft.Switch(
             label="Остановить время",
-            value=True if not self.mcommands.get_do_day_light_cycle() else False,
+            value=False,
             on_change=self.toggle_daylight_cycle,
         )
 
@@ -62,10 +62,12 @@ class ServerTimePanel(ft.Card):
         value = "False" if e.control.value == True else "True"
         self.mcommands.do_day_light_cycle(value)
 
+    ## FIXME: Не отображается время и невалидный статус switch, если сервер запустился после приложения.
     def update_state(self, status):
-        if status is StatusServer.ONLINE:
-            self.content.visible = True
+        if status == ServerStatus.ONLINE:
+            self.switch.value = not self.mcommands.get_do_day_light_cycle()
             self.elevated_time.text = self.mcommands.get_server_time()
+            self.content.visible = True
         else:
             self.content.visible = False
         self.update()

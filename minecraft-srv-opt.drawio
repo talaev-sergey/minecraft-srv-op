@@ -1,0 +1,251 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
+  <diagram name="Страница — 1" id="qSWUWiOyF8mX-dF6iPIF">
+    <mxGraphModel dx="2560" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-6" value="minecraft-srv-opt" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;verticalAlign=top;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="-810" y="40" width="3490" height="1990" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-9" value="img" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-800" y="160" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-10" value="font" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-800" y="80" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-15" value="minecraft-srv-opt" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;glass=0;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-160" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-2" value="ui" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;verticalAlign=top;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="-800" y="240" width="2320" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-20" value="__init__.py" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-800" y="280" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-23" value="server_control_panel.py" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="960" y="330" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-30" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-20" target="ggUO1RmvVHPLNWiGFxcw-24" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-570" y="625" as="targetPoint" />
+            <mxPoint x="-570" y="625" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-24" value="server_state_panel.py" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1150" y="330" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-25" value="server_time_panel.py" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1350" y="330" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-26" value="import" style="endArrow=open;endSize=12;dashed=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-20" target="ggUO1RmvVHPLNWiGFxcw-25" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-510" y="300" as="sourcePoint" />
+            <mxPoint x="-510" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-31" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-20" target="ggUO1RmvVHPLNWiGFxcw-23" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-640" y="544.83" as="targetPoint" />
+            <mxPoint x="-570" y="544.83" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-32" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-20" target="ggUO1RmvVHPLNWiGFxcw-40" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="355" as="targetPoint" />
+            <mxPoint x="-570" y="464.83000000000004" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-33" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-20" target="ggUO1RmvVHPLNWiGFxcw-36" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-520" y="402.5" as="targetPoint" />
+            <mxPoint x="-330" y="327.5" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-39" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="-610" y="350" width="260" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-36" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;alert_window.py&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;+ AlertWindow: Class&lt;br&gt;&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;" parent="ggUO1RmvVHPLNWiGFxcw-39" vertex="1">
+          <mxGeometry width="260" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-37" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" parent="ggUO1RmvVHPLNWiGFxcw-36" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-24" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-38" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AlertWindow&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ __init__(page: ft.Page): None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;#&amp;nbsp;&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;current_status: str = &quot;no status&quot;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;#&amp;nbsp;&amp;nbsp;&lt;span style=&quot;background-color: transparent;&quot;&gt;last_status: str = &quot;no status&quot;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;#&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;error: str = &quot;no error&quot;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;#&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;dlg_modal: ft.AlertDialog&lt;/span&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;#&amp;nbsp; _on_click(): None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;#&amp;nbsp; _close(): None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp; open(status: StatusServer): None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp; set_error(error:str): None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp; update_state(status:&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;StatusServer&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;): None&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="ggUO1RmvVHPLNWiGFxcw-39" vertex="1">
+          <mxGeometry x="7.583333333333333" y="50" width="243.74999999999997" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-48" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="1230" y="800" width="360" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-45" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;server_status.py&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;+ ServerStatus: Class&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;" parent="ggUO1RmvVHPLNWiGFxcw-48" vertex="1">
+          <mxGeometry width="360" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-46" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" parent="ggUO1RmvVHPLNWiGFxcw-45" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-24" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-47" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ServerStatus&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;Enum&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ OFFLINE = &quot;Сервер выключен&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ONLINE = &quot;Сервер работает. Подключение совершено.&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ STARTING = &quot;Запуск сервера...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ STOPING = &quot;Остановка сервера...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ RESTATING = &quot;Перезапуск сервера...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ERROR = &quot;Ошибка:&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ RCON_CLOSED = &quot;Невозможно подключится к серверу&quot;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="ggUO1RmvVHPLNWiGFxcw-48" vertex="1">
+          <mxGeometry x="7" y="50" width="343" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-52" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;exitX=1;exitY=0.902;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-38" target="ggUO1RmvVHPLNWiGFxcw-45" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-590" y="660" as="sourcePoint" />
+            <mxPoint x="-430" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-53" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-38" target="ggUO1RmvVHPLNWiGFxcw-45" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-350" y="660" as="sourcePoint" />
+            <mxPoint x="-190" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-55" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="-60" y="350" width="320" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-40" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;server_control_panel.py&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;+ ServerControlPanel: Class&lt;br&gt;&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;" parent="ggUO1RmvVHPLNWiGFxcw-55" vertex="1">
+          <mxGeometry width="308.15" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-41" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" parent="ggUO1RmvVHPLNWiGFxcw-40" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-24" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-54" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ServerControlPanel&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;&amp;lt;&amp;lt;ft.Card&amp;gt;&amp;gt;&lt;/span&gt;&lt;b&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ __init__(on_start, on_stop, on_restart): None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;#&amp;nbsp;&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;start_btn: ft.IconButton&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;#&amp;nbsp; stop_btn: ft.IconButton&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;#&amp;nbsp; restart_btn: ft.IconButton&lt;/span&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp; update_state(status: StatusServer)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="ggUO1RmvVHPLNWiGFxcw-55" vertex="1">
+          <mxGeometry x="11.85" y="48.98" width="288.89" height="141.02" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-57" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;exitX=1.002;exitY=0.885;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-54" target="ggUO1RmvVHPLNWiGFxcw-45" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-90" y="620" as="sourcePoint" />
+            <mxPoint x="70" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-61" value="&lt;b&gt;main.py&lt;/b&gt;&lt;div&gt;&lt;div&gt;&lt;p style=&quot;text-align: left; margin: 0px 0px 0px 4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left; margin: 0px 0px 0px 4px;&quot;&gt;+ RCON_HOST: str&lt;/p&gt;&lt;p style=&quot;text-align: left; margin: 0px 0px 0px 4px;&quot;&gt;+&amp;nbsp;RCON_PORT: str&lt;/p&gt;&lt;p style=&quot;text-align: left; margin: 0px 0px 0px 4px;&quot;&gt;+&amp;nbsp;RCON_PASSWORD: str&lt;/p&gt;&lt;p style=&quot;text-align: left; margin: 0px 0px 0px 4px;&quot;&gt;+&amp;nbsp;SERVER_BAT: str&lt;/p&gt;&lt;hr style=&quot;text-align: left; border-style: solid;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;text-align: left; margin: 0px 0px 0px 4px;&quot;&gt;+ async main(ft.Page)&lt;/p&gt;&lt;p style=&quot;text-align: left; margin: 0px 0px 0px 4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left; margin: 0px 0px 0px 4px;&quot;&gt;+ async periodic_update()&lt;/p&gt;&lt;p style=&quot;text-align: left; margin: 0px 0px 0px 4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-640" y="810" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-63" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="-700" y="908" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-64" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;entryX=0.051;entryY=0.707;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-63" target="ggUO1RmvVHPLNWiGFxcw-61" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-618" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-65" value="&amp;lt;&amp;lt;async&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;exitX=1;exitY=0.892;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;entryX=-0.001;entryY=0.906;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-61" target="ggUO1RmvVHPLNWiGFxcw-38" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-430" y="740" as="sourcePoint" />
+            <mxPoint x="-270" y="740" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-400" y="953" />
+              <mxPoint x="-400" y="690" />
+              <mxPoint x="-650" y="690" />
+              <mxPoint x="-650" y="581" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-66" value="&amp;lt;&amp;lt;async&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.9;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.004;exitY=0.895;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-61" target="ggUO1RmvVHPLNWiGFxcw-54" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-440" y="930" as="sourcePoint" />
+            <mxPoint x="-613" y="591" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-67" value="&amp;lt;&amp;lt;create&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;exitX=0.998;exitY=0.712;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.004;entryY=0.19;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-61" target="ggUO1RmvVHPLNWiGFxcw-38" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-400" y="780" as="sourcePoint" />
+            <mxPoint x="-240" y="780" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-460" y="924" />
+              <mxPoint x="-460" y="705" />
+              <mxPoint x="-660" y="705" />
+              <mxPoint x="-660" y="438" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ggUO1RmvVHPLNWiGFxcw-69" value="&amp;lt;&amp;lt;create&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;exitX=1.002;exitY=0.716;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.001;entryY=0.411;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-61" target="ggUO1RmvVHPLNWiGFxcw-54" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-440" y="934" as="sourcePoint" />
+            <mxPoint x="-591" y="448" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="liig3hptTpifvMlz1kNh-4" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="-110" y="810" width="470" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="liig3hptTpifvMlz1kNh-1" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;server_manager.py&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;+ ServerManager: Class&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;" parent="liig3hptTpifvMlz1kNh-4" vertex="1">
+          <mxGeometry width="470" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="liig3hptTpifvMlz1kNh-2" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" parent="liig3hptTpifvMlz1kNh-1" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-24" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="liig3hptTpifvMlz1kNh-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ServerManager&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;background-color: transparent;&quot;&gt;__init__(&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; self,&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; rcon_host,&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; rcon_password,&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; rcon_port,&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; server_bat=None,&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; update_status_callback=None,&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; status=ServerStatus.OFFLINE,&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; alert_window=AlertWindow,&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp; &amp;nbsp; ): None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rcon_host = rcon_host&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ self.rcon_password = rcon_password&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rcon_port = rcon_port&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ mcrcon = MCRcon(self.rcon_host, self.rcon_password, self.rcon_port)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ server_bat = server_bat&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ update_status_callback=update_status_callback&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ status = status&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ alert_window = alert_window&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ os_type = platform.system()&amp;nbsp;&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;background-color: transparent;&quot;&gt;get_local_ip( ): str&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;update_server_status( ): None&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;check_port(port: int): bool&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;rcon_connect( ): bool&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;get_mcrcon( ): mcrcon&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;get_status( ): status&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;set_status(status): None&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="liig3hptTpifvMlz1kNh-4" vertex="1">
+          <mxGeometry x="10" y="50" width="440" height="630" as="geometry" />
+        </mxCell>
+        <mxCell id="liig3hptTpifvMlz1kNh-5" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="580" y="800" width="330" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="Cb4SldRDdeWzlm-vB2p7-1" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;mcommands.py&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;+ MCommands: Class&lt;br&gt;&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;" parent="liig3hptTpifvMlz1kNh-5" vertex="1">
+          <mxGeometry width="330" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="Cb4SldRDdeWzlm-vB2p7-2" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" parent="Cb4SldRDdeWzlm-vB2p7-1" vertex="1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-24" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Cb4SldRDdeWzlm-vB2p7-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MCommands&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;background-color: transparent;&quot;&gt;__init__(&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;rcon: MCRcon,&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;alert_window: AlertWindow&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;): None&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rcon = rcon&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ alert_window = alert_window&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;send_command(command: str): str&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ get_server_time( ): str&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;set_server_time(hours, minutes): None&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;background-color: transparent;&quot;&gt;do_day_light_cycle(value: str): None&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;stop_server( ): None&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;close( ): None&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="liig3hptTpifvMlz1kNh-5" vertex="1">
+          <mxGeometry x="10" y="50.00481481481481" width="310" height="482.22222222222223" as="geometry" />
+        </mxCell>
+        <mxCell id="liig3hptTpifvMlz1kNh-6" value="&amp;lt;&amp;lt;create&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1.001;exitY=0.72;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.063;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-61" target="liig3hptTpifvMlz1kNh-3" edge="1">
+          <mxGeometry x="0.3271" width="160" relative="1" as="geometry">
+            <mxPoint x="-330" y="950" as="sourcePoint" />
+            <mxPoint x="-170" y="950" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-150" y="925" />
+              <mxPoint x="-150" y="900" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="liig3hptTpifvMlz1kNh-7" value="&amp;lt;&amp;lt;async&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;entryX=0.002;entryY=0.561;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.001;exitY=0.894;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-61" target="liig3hptTpifvMlz1kNh-3" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-459" y="963" as="sourcePoint" />
+            <mxPoint x="-38" y="536" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="liig3hptTpifvMlz1kNh-8" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0;exitY=0.076;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;entryX=0.341;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="Cb4SldRDdeWzlm-vB2p7-3" target="liig3hptTpifvMlz1kNh-3" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="565.6199999999999" y="885.5825925925926" as="sourcePoint" />
+            <mxPoint x="65" y="1257" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="430" y="887" />
+              <mxPoint x="430" y="1257" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="liig3hptTpifvMlz1kNh-9" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1.004;exitY=0.899;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;entryX=0.002;entryY=0.65;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-38" target="liig3hptTpifvMlz1kNh-3" edge="1">
+          <mxGeometry x="0.6495" y="-1" width="160" relative="1" as="geometry">
+            <mxPoint x="-180" y="580" as="sourcePoint" />
+            <mxPoint x="-180" y="820" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="liig3hptTpifvMlz1kNh-10" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1.002;exitY=0.885;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.003;entryY=0.655;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ggUO1RmvVHPLNWiGFxcw-54" target="liig3hptTpifvMlz1kNh-3" edge="1">
+          <mxGeometry x="0.8018" width="160" relative="1" as="geometry">
+            <mxPoint x="100" y="690" as="sourcePoint" />
+            <mxPoint x="-160" y="850" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="251" y="524" />
+              <mxPoint x="251" y="700" />
+              <mxPoint x="-160" y="700" />
+              <mxPoint x="-160" y="1270" />
+              <mxPoint x="-80" y="1270" />
+              <mxPoint x="-80" y="1273" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

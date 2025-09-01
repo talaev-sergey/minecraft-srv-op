@@ -1,5 +1,5 @@
 import flet as ft
-from server_manager import StatusServer
+from server_status import ServerStatus
 
 
 class ServerStatePanel(ft.Card):
@@ -11,7 +11,7 @@ class ServerStatePanel(ft.Card):
             color=ft.Colors.GREEN,
         )
         self.state_server = ft.Text(
-            value="127.0.0.1",
+            value="",
             color=ft.Colors.BLUE,
             size=16,
             weight=ft.FontWeight.BOLD,
@@ -29,35 +29,38 @@ class ServerStatePanel(ft.Card):
             )
         )
 
-    def update_state(self, status, error: str | None, ip: str | None):
+    def update_state(self, status, ip: str | None):
         match status:
-            case StatusServer.OFFLINE:
+            case ServerStatus.OFFLINE:
                 self.progress_ring.value = 0
                 self.progress_ring.visible = False
-                self.state_server.value = "Сервер не запущен"
-            case StatusServer.ONLINE:
+                self.state_server.value = ServerStatus.OFFLINE.value
+            case ServerStatus.ONLINE:
                 self.progress_ring.value = 100
                 self.progress_ring.visible = True
                 self.state_server.value = ip
-            case StatusServer.STARTING:
+            case ServerStatus.STARTING:
                 self.progress_ring.value = None
                 self.progress_ring.visible = True
-                self.state_server.value = "Запуск сервера..."
-            case StatusServer.STOPING:
+                self.state_server.value = ServerStatus.STARTING.value
+            case ServerStatus.STOPING:
                 self.progress_ring.value = None
                 self.progress_ring.visible = True
-                self.state_server.value = "Остановка сервера..."
-            case StatusServer.RESTATING:
+                self.state_server.value = ServerStatus.STOPING.value
+            case ServerStatus.RESTATING:
                 self.progress_ring.value = None
                 self.progress_ring.visible = True
-                self.state_server.value = "Перезапуск сервера..."
-            case StatusServer.ERROR:
-                self.progress_ring.value = 0
-                self.progress_ring.visible = False
-                self.state_server.value = error
-            case StatusServer.RCON_CLOSED:
-                self.progress_ring.value = 0
-                self.progress_ring.visible = False
-                self.state_server.value = error
-
+                self.state_server.value = ServerStatus.RESTATING.value
+            # HACK: Если необходимо, то реализовать
+            # case ServerStatus.ERROR:
+            #     self.progress_ring.value = None
+            #     self.progress_ring.visible = True
+            #     self.progress_ring.color = ft.Colors.RED
+            #     self.state_server.value = ""
+            # case ServerStatus.RCON_CLOSED:
+            #     self.progress_ring.value = 100
+            #     self.progress_ring.visible = True
+            #     self.progress_ring.color = ft.Colors.RED
+            #     self.state_server.value = ""
+            #
         self.update()
