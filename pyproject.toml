@@ -1,6 +1,6 @@
 [project]
 name = "minecraft-srv-op"
-version = "0.1.1"
+version = "0.2.0"
 description = "A simple GUI application for managing a Minecraft server."
 authors = [{name="Sergey Talaev", email="mail@talaev.ru"}]
 readme = "README.md"
@@ -18,9 +18,9 @@ dependencies = [
 ]
 [tool.commitizen]
 name = "cz_conventional_commits"   # стандартная схема
-version = "0.1.1"                   # текущая версия
+version = "0.2.0"                   # текущая версия
 version_scheme = "semver"            # семантическое версионирование
-tag_format = "v$version"             # теги будут v0.1.1, v0.1.2...
+tag_format = "v$version"             # теги будут v0.2.0, v0.1.2...
 update_changelog_on_bump = true      # обновлять CHANGELOG.md при bump
 major_version_zero = true            # версия <1.0.0 считается в режиме разработки
 version_files = ["pyproject.toml:version"]  # где хранится версия
