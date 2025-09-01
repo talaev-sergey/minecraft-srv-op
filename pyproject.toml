@@ -16,3 +16,11 @@ dependencies = [
     "pytest-mock>=3.14.1",
     "ruff>=0.12.11",
 ]
+[tool.commitizen]
+name = "cz_conventional_commits"   # стандартная схема
+version = "0.1.1"                   # текущая версия
+version_scheme = "semver"            # семантическое версионирование
+tag_format = "v$version"             # теги будут v0.1.1, v0.1.2...
+update_changelog_on_bump = true      # обновлять CHANGELOG.md при bump
+major_version_zero = true            # версия <1.0.0 считается в режиме разработки
+version_files = ["pyproject.toml:version"]  # где хранится версия
